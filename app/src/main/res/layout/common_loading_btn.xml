@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable name="btnText" type="java.lang.String" />
+    </data>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/btn_round_black"
+        android:textColor="@color/main_white"
+        android:fontFamily="@font/nanum_bold"
+        android:textSize="24sp"
+        android:text="@{btnText}"/>
+
+</layout>

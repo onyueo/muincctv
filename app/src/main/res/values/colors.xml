@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--  Main Color 적용  -->
+    <color name="main_black">#0E1424</color>
+    <color name="main_white">#FFFFFF</color>
+    <color name="main_gray">#787878</color>
+    <color name="main_top">#012459</color>
+    <color name="main_bottom">#0168A6</color>
+    <color name="main_blue">#A4BCDA</color> // 보류
+
+    <!--  Sub Color 적용  -->
+    <color name="main_red">#A30723</color>
+    <color name="btn_false">#7D7C7C</color>
+    <color name="cctv_normal">#1BFF5B</color>
+    <color name="cctv_device_error">#FFCD1B</color>
+    <color name="kakao_yellow">#FAE407</color>
+    <color name="naver_green">#00C73C</color>
+
+
+
+    <!--  layout용 랜덤색상  -->
+    <color name="layout_color_ddd1">#FF4869</color>
+    <color name="layout_color_ddd2">#9D48FF</color>
+    <color name="layout_color_ddd3">#FFA748</color>
+    <color name="layout_color_ddd4">#4876FF</color>
+    <color name="layout_color_ddd5">#FF48ED</color>
+    <color name="layout_color_ddd6">#5AFF48</color>
+    <color name="layout_color_ddd7">#48FFAA</color>
+
+</resources>

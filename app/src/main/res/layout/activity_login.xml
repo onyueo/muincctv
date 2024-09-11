@@ -40,8 +40,8 @@
         <EditText
             android:id="@+id/login_input_email"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginVertical="10dp"
+            android:layout_height="70dp"
+            android:layout_marginBottom="5dp"
             android:autofillHints="emailAddress"
             android:background="@drawable/input_round_white"
             android:fontFamily="@font/nanum_bold"
@@ -54,8 +54,7 @@
         <EditText
             android:id="@+id/login_input_pw"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginVertical="10dp"
+            android:layout_height="70dp"
             android:background="@drawable/input_round_white"
             android:fontFamily="@font/nanum_bold"
             android:hint="비밀번호를 입력하세요"
@@ -155,6 +154,7 @@
             </LinearLayout>
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/go_signup_btn"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@drawable/btn_round_black"

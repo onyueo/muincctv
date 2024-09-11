@@ -12,26 +12,23 @@
         android:layout_height="wrap_content"
         android:background="@color/main_top"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="136dp">
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/tool_back"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="16dp"
-            android:src="@drawable/toolbar_back"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
+        tools:layout_editor_absoluteX="205dp">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/tool_title"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:src="@drawable/toolbar_title"
             android:layout_gravity="center"
-            />
+            android:src="@drawable/toolbar_title" />
 
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/tool_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/toolbar_back"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.appcompat.widget.Toolbar>
 

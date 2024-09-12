@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/modal_round_white"
+    android:orientation="vertical"
+    android:layout_width="300dp"
+    android:layout_height="225dp"
+    android:paddingHorizontal="5dp"
+    android:paddingVertical="15dp">
+
+    <!--  상단  -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/modal_warning_icon"/>
+
+        <TextView
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="25dp"
+            android:text="메시지"
+            android:textColor="@color/main_black"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:fontFamily="@font/nanum_bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:text="메시지"
+            android:textColor="@color/main_gray"
+            android:textSize="16sp"
+            android:fontFamily="@font/nanum_bold" />
+
+    </LinearLayout>
+
+
+    <!--  하단  -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_round_black"
+            android:backgroundTint="@color/main_red"
+            android:fontFamily="@font/nanum_bold"
+            android:layout_marginHorizontal="5dp"
+            android:text="아니오"
+            android:textColor="@color/main_white"
+            android:textSize="18sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="5dp"
+            android:background="@drawable/btn_round_black"
+            android:fontFamily="@font/nanum_bold"
+            android:text="네"
+            android:textColor="@color/main_white"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

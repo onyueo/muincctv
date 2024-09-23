@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AssistDeviceChoiceActivity">
+
+    <include
+        android:id="@+id/loading_toolbar"
+        layout="@layout/common_toolbar"
+        tools:layout_editor_absoluteX="205dp"
+        tools:layout_editor_absoluteY="64dp" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/main_bg_gredient"
+        app:layout_constraintTop_toBottomOf="@id/loading_toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="64dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/loading_toolbar"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="30dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:fontFamily="@font/nanum_bold"
+            android:text="그룹의 이름을 지어주세요"
+            android:textAlignment="center"
+            android:textColor="@color/main_white"
+            android:textSize="24sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nanum_bold"
+            android:text="정해진 이름은 수정할 수 없습니다"
+            android:layout_marginBottom="25dp"
+            android:textAlignment="center"
+            android:textColor="@color/main_white"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/assist_device_name_input"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@drawable/input_round_white"
+            android:fontFamily="@font/nanum_bold"
+            android:hint="ex) 우리집"
+            android:padding="15dp"
+            android:textColor="@color/main_black"
+            android:textColorHint="@color/main_gray"
+            android:textSize="18sp" />
+
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/assist_device_name_btn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/btn_round_black"
+        android:fontFamily="@font/nanum_bold"
+        android:text="등록"
+        android:textColor="@color/main_white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -42,6 +42,14 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+
+        // 테스트용
+        val jumpBtn = findViewById<TextView>(R.id.jump_jump)
+        jumpBtn.setOnClickListener {
+            val intent = Intent(this, AssistDeviceChoiceActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 }
 

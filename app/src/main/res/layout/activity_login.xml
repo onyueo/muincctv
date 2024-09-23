@@ -90,15 +90,28 @@
 
 
         <TextView
-            android:id="@+id/loading_find_id"
+        android:id="@+id/loading_find_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:fontFamily="@font/nanum_bold"
+        android:text="아이디 / 비밀번호 찾기"
+        android:textColor="@color/main_white"
+        android:textSize="20sp" />
+
+        <!-- 테스트용 -->
+        <TextView
+            android:id="@+id/jump_jump"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="10dp"
             android:fontFamily="@font/nanum_bold"
-            android:text="아이디 / 비밀번호 찾기"
+            android:text="~임시이동~"
             android:textColor="@color/main_white"
             android:textSize="20sp" />
+
 
     </LinearLayout>
 

@@ -13,6 +13,24 @@
         android:theme="@style/Theme.MuinCCTV"
         tools:targetApi="31">
         <activity
+            android:name=".AssistDeviceMonitorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AssistDeviceIdActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AssistDeviceGroupNameActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AssistDeviceNameActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AssistDeviceChoiceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminChoiceActivity"
+            android:exported="false" />
+        <activity
             android:name=".SignUpActivity"
             android:exported="false" />
         <activity

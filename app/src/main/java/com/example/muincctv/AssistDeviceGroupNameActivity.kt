@@ -21,7 +21,7 @@ class AssistDeviceGroupNameActivity : AppCompatActivity() {
 
 
         // 등록버튼 클릭 시 기기ID 입력하는 페이지로 이동
-        val goNext = findViewById<AppCompatButton>(R.id.assist_device_name_btn)
+        val goNext = findViewById<AppCompatButton>(R.id.assist_device_group_name_btn)
         goNext.setOnClickListener {
             val intent = Intent(this, AssistDeviceIdActivity::class.java)
             startActivity(intent)

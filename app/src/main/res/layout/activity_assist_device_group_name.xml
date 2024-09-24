@@ -66,7 +66,7 @@
     </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/assist_device_name_btn"
+        android:id="@+id/assist_device_group_name_btn"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginHorizontal="30dp"

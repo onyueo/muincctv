@@ -1,11 +1,14 @@
 package com.example.muincctv
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Spinner
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatButton
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
@@ -14,7 +17,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var mainDropdownGroup: Spinner
 
     private lateinit var recyclerView: RecyclerView
-
+    private lateinit var menuAdapter: MainMenuChoiceAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,22 +55,50 @@ class MainActivity : AppCompatActivity() {
 
 
     // 리사이클러뷰 설정 - 메인메뉴 리스트
-        val menuItems: MutableList<MainMenuModel> = mutableListOf(
-            MainMenuModel("문 열기",R.drawable.main_door_opend, true),
-            MainMenuModel("녹화 영상",R.drawable.main_video_play, false),
-            MainMenuModel("비상연락", R.drawable.main_sos_call,true),
-            MainMenuModel("출입 기록", R.drawable.main_history,true),
-            MainMenuModel("사용자 관리", R.drawable.main_manage_user,false),
-            MainMenuModel("사용자 추가",R.drawable.main_person_add, false),
-            MainMenuModel("기기 관리", R.drawable.main_manage_device,false),
-            MainMenuModel("설정", R.drawable.main_setting,true),
-            MainMenuModel("녹화 중지",R.drawable.main_record_stop, false),
-            MainMenuModel("재부팅", R.drawable.main_reset,false)
-        )
-
         recyclerView = findViewById<RecyclerView>(R.id.main_menu_choice)
-        val menuAdapter = MainMenuChoiceAdapter(menuItems)
+        recyclerView.layoutManager = GridLayoutManager(this, 2)
+
+        val userHasPermission = true // 권한 여부
+
+        val menuItems: MutableList<MainMenuModel> = mutableListOf()
+
+        if (userHasPermission) {
+            // 권한이 있는 경우
+            menuItems.add(MainMenuModel("문 열기", R.drawable.main_door_opend, true))
+            menuItems.add(MainMenuModel("녹화 영상", R.drawable.main_video_play, true))
+            menuItems.add(MainMenuModel("비상연락", R.drawable.main_sos_call, true))
+            menuItems.add(MainMenuModel("출입 기록", R.drawable.main_history, true))
+            menuItems.add(MainMenuModel("사용자 관리", R.drawable.main_manage_user, true))
+            menuItems.add(MainMenuModel("사용자 추가", R.drawable.main_person_add, true))
+            menuItems.add(MainMenuModel("기기 관리", R.drawable.main_manage_device, true))
+            menuItems.add(MainMenuModel("설정", R.drawable.main_setting, true))
+            menuItems.add(MainMenuModel("녹화 중지", R.drawable.main_record_stop, true))
+            menuItems.add(MainMenuModel("재부팅", R.drawable.main_reset, true))
+        } else {
+            // 권한이 없는 경우
+            menuItems.add(MainMenuModel("문 열기", R.drawable.main_door_opend, true))
+            menuItems.add(MainMenuModel("출입 기록", R.drawable.main_history, true))
+            menuItems.add(MainMenuModel("비상연락", R.drawable.main_sos_call, true))
+            menuItems.add(MainMenuModel("설정", R.drawable.main_setting, true))
+        }
+
+        menuAdapter = MainMenuChoiceAdapter(menuItems) { menuItem ->
+            // 클릭 이벤트 처리
+            if (menuItem.menu_text == "문 열기" || menuItem.menu_text == "문 닫기") {
+                menuItem.is_opened = !menuItem.is_opened // 상태 토글
+                val newText = if (menuItem.is_opened) "문 닫기" else "문 열기"
+                menuItems[0] = menuItem.copy(menu_text = newText)
+                menuAdapter.notifyItemChanged(0)
+
+            } else if (menuItem.menu_text == "녹화 영상") {
+                val intent = Intent(this, RecordingListActivity::class.java)
+                startActivity(intent)
+            }
+        }
+
+        recyclerView.adapter = menuAdapter
 
 
     }
 }
+

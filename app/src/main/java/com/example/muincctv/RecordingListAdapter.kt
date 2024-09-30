@@ -5,7 +5,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.appcompat.view.menu.MenuView.ItemView
 import androidx.recyclerview.widget.RecyclerView
 
 class RecordingListAdapter (val List: MutableList<RecordingListModel>) : RecyclerView.Adapter<RecordingListAdapter.ViewHolder>(){
@@ -29,6 +28,11 @@ class RecordingListAdapter (val List: MutableList<RecordingListModel>) : Recycle
 
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        // 드롭다운
+//        val rootView: View = LayoutInflater.from(context).inflate(R.layout.item_dropdown_list, parent, false)
+//        val itemName: TextView = rootView.findViewById(R.id.dropdown_item_text)
+
+        // 리사이클러 뷰
         private val recordingImg: ImageView = itemView.findViewById(R.id.item_recording_img)
         private val recordingDate: TextView = itemView.findViewById(R.id.item_recording_date)
         private val recordingPermission: TextView = itemView.findViewById(R.id.item_recording_permission)

@@ -1,6 +1,7 @@
 package com.example.muincctv
 
 import android.os.Bundle
+import android.widget.Spinner
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -11,6 +12,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.muincctv.databinding.ActivityRecordingListBinding
 
 class RecordingListActivity : AppCompatActivity() {
+
+    private lateinit var recordingDropdownDevice: Spinner
+    private lateinit var recordingDropdownGroup: Spinner
 
     private lateinit var recyclerView: RecyclerView
 
@@ -29,9 +33,27 @@ class RecordingListActivity : AppCompatActivity() {
         }
 
         // appbar 타이틀 변경
-        binding.titleText = "직원 관리"
+        binding.titleText = "출입 기록"
 
-        // 리사이클러뷰 설정 - 녹화영상
+    // 드롭다운 설정
+        recordingDropdownDevice = findViewById(R.id.recording_dropdown_device)
+        recordingDropdownGroup = findViewById(R.id.recording_dropdown_group)
+
+        val devices = arrayListOf(
+            "Device 1",
+            "Device 2",
+            "Device 3"
+        )
+
+        val groups = arrayListOf(
+            "Group A",
+            "Group B",
+            "Group C"
+        )
+
+
+
+    // 리사이클러뷰 설정 - 녹화영상
         val items: MutableList<RecordingListModel> = mutableListOf(
             RecordingListModel(R.drawable.sample_img, "2024.09.25 ~ 2024.09.25", "김무인"),
             RecordingListModel(R.drawable.sample_img, "2024.06.20 ~ 2024.06.22", "이무인"),

@@ -57,20 +57,30 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <Spinner
+                    <TextView
                         android:id="@+id/main_dropdown_device"
                         android:background="@drawable/dropdown_background"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:text="test1"
+                        android:fontFamily="@font/nanum_bold"
+                        android:textSize="24sp"
+                        android:textColor="@color/main_black"
+                        android:padding="5dp"
                         android:layout_margin="10dp" />
 
-                    <Spinner
+                    <TextView
                         android:id="@+id/main_dropdown_group"
                         android:background="@drawable/dropdown_background"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:text="test2"
+                        android:fontFamily="@font/nanum_bold"
+                        android:textSize="24sp"
+                        android:textColor="@color/main_black"
+                        android:padding="5dp"
                         android:layout_margin="10dp" />
 
                 </LinearLayout>

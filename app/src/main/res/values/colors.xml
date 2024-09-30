@@ -11,7 +11,10 @@
 
     <!--  Sub Color 적용  -->
     <color name="main_red">#A30723</color>
+    <color name="alam_blue">#1A3A8E</color>
     <color name="btn_false">#7D7C7C</color>
+    <color name="dialog_top">#F0F0F0</color>
+    <color name="dialog_line">#C4C4C4</color>
     <color name="cctv_normal">#1BFF5B</color>
     <color name="cctv_device_error">#FFCD1B</color>
     <color name="kakao_yellow">#FAE407</color>

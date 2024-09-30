@@ -3,6 +3,7 @@ package com.example.muincctv
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Spinner
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
@@ -13,8 +14,8 @@ import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var mainDropdownDevice: Spinner
-    private lateinit var mainDropdownGroup: Spinner
+    private lateinit var mainDropdownDevice: TextView
+    private lateinit var mainDropdownGroup: TextView
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var menuAdapter: MainMenuChoiceAdapter
@@ -35,26 +36,44 @@ class MainActivity : AppCompatActivity() {
 
         // 데이터 배열
         val devices = arrayListOf(
-            MainDropDownModel("Device 1", R.drawable.modal_warning_icon),
-            MainDropDownModel("Device 2", R.drawable.main_circle_alam),
-            MainDropDownModel("Device 3", R.drawable.main_circle_alam)
+            MainDropDownModel("Device 1", "관리자"),
+            MainDropDownModel("Device 2", " "),
+            MainDropDownModel("Device 3", " ")
         )
 
         val groups = arrayListOf(
-            MainDropDownModel("Group A", R.drawable.modal_warning_icon),
-            MainDropDownModel("Group B", R.drawable.modal_warning_icon),
-            MainDropDownModel("Group C", R.drawable.main_circle_alam)
+            MainDropDownModel("Group A", " "),
+            MainDropDownModel("Group B", "관리자"),
+            MainDropDownModel("Group C", " "),
+            MainDropDownModel("Group D", " ")
         )
 
         // 어댑터 생성 및 스피너에 설정
         val deviceAdapter = MainDropdownAdapter(this, devices)
-        mainDropdownDevice.adapter = deviceAdapter
+//        mainDropdownDevice.adapter = deviceAdapter
 
         val groupAdapter = MainDropdownAdapter(this, groups)
-        mainDropdownGroup.adapter = groupAdapter
+//        mainDropdownGroup.adapter = groupAdapter
+
+        // Device TextView 클릭 시 다이얼로그 표시
+        mainDropdownDevice.setOnClickListener {
+            val customDialog = CustomDialog(this, devices) { selectedItem ->
+                mainDropdownDevice.text = selectedItem.device_title // 선택된 텍스트 설정
+            }
+            customDialog.show()
+        }
+
+        // Group TextView 클릭 시 다이얼로그 표시
+        mainDropdownGroup.setOnClickListener {
+            val customDialog = CustomDialog(this, groups) { selectedItem ->
+                mainDropdownGroup.text = selectedItem.device_title // 선택된 텍스트 설정
+            }
+            customDialog.show()
+        }
 
 
-    // 리사이클러뷰 설정 - 메인메뉴 리스트
+
+        // 리사이클러뷰 설정 - 메인메뉴 리스트
         recyclerView = findViewById<RecyclerView>(R.id.main_menu_choice)
         recyclerView.layoutManager = GridLayoutManager(this, 2)
 

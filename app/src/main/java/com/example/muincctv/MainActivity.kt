@@ -3,11 +3,9 @@ package com.example.muincctv
 import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Spinner
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.AppCompatButton
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.databinding.DataBindingUtil
@@ -55,22 +53,6 @@ class MainActivity : AppCompatActivity() {
             MainDropDownModel("Group C", " "),
             MainDropDownModel("Group D", " ")
         )
-
-        // Device TextView 클릭 시 다이얼로그 표시
-        mainDropdownDevice.setOnClickListener {
-            showDialog("Devices", devices) { selectedItem ->
-                mainDropdownDevice.text = selectedItem.device_title
-            }
-        }
-
-        // Group TextView 클릭 시 다이얼로그 표시
-        mainDropdownGroup.setOnClickListener {
-            showDialog("Groups", groups) { selectedItem ->
-                mainDropdownGroup.text = selectedItem.device_title
-            }
-        }
-
-
 
         // Device TextView 클릭 시 다이얼로그 표시
         mainDropdownDevice.setOnClickListener {
@@ -128,6 +110,9 @@ class MainActivity : AppCompatActivity() {
 
             } else if (menuItem.menu_text == "녹화 영상") {
                 val intent = Intent(this, RecordingListActivity::class.java)
+                startActivity(intent)
+            } else if (menuItem.menu_text == "출입 기록") {
+                val intent = Intent(this, EntryRecordsActivity::class.java)
                 startActivity(intent)
             }
         }

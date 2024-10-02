@@ -33,7 +33,7 @@ class RecordingListActivity : AppCompatActivity() {
         }
 
         // appbar 타이틀 변경
-        binding.titleText = "출입 기록"
+        binding.titleText = "녹화 영상"
 
     // 드롭다운 설정
         recordingDropdownDevice = findViewById(R.id.recording_dropdown_device)

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="titleText"
+            type="java.lang.String" />
+        <variable
+            name="recordingList"
+            type="java.util.List" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".RecordingListActivity">
+
+        <include
+            android:id="@+id/entry_recording_toolbar"
+            layout="@layout/common_toolbar_text"
+            app:titleText="@{titleText}" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="64dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/entry_recording_toolbar">
+            <!--            android:visibility="@{recordingList.isEmpty() ? android.view.View.VISIBLE : android.view.View.GONE}">-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!--     상단 드롭다운       -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+
+                    <!--     드롭다운 데이터 바꿔야함~!~!       -->
+                    <Spinner
+                        android:id="@+id/entry_recording_dropdown_device"
+                        android:background="@drawable/dropdown_background"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_margin="10dp" />
+
+                    <Spinner
+                        android:id="@+id/entry_recording_dropdown_group"
+                        android:background="@drawable/dropdown_background"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_margin="10dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginHorizontal="10dp"
+                android:background="@color/layout_color_ddd7"/>
+
+
+            <TextView
+                android:id="@+id/no_entry_recording_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="출입 기록이 없습니다"
+                android:fontFamily="@font/nanum_bold"
+                android:textColor="@color/main_white"
+                android:textSize="20sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/entry_recording_RV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/btn_round_black"
+    android:backgroundTint="@color/main_white"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:layout_margin="15dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -22,6 +25,7 @@
                 android:layout_gravity="center"
                 android:orientation="vertical">
                 <TextView
+                    android:id="@+id/information_title1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAlignment="textEnd"
@@ -32,6 +36,7 @@
                     android:text="이름"/>
 
                 <TextView
+                    android:id="@+id/information_title2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAlignment="textEnd"
@@ -57,6 +62,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/information_text1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAlignment="textStart"
@@ -67,6 +73,7 @@
                     android:text="김동생"/>
 
                 <TextView
+                    android:id="@+id/information_text2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAlignment="textStart"
@@ -87,6 +94,7 @@
             android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/information_delete"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
                 android:layout_weight="1"
@@ -99,6 +107,7 @@
                 android:text="삭제"/>
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/information_btn"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
                 android:layout_weight="2"

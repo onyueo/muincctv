@@ -114,6 +114,12 @@ class MainActivity : AppCompatActivity() {
             } else if (menuItem.menu_text == "출입 기록") {
                 val intent = Intent(this, EntryRecordsActivity::class.java)
                 startActivity(intent)
+            } else if (menuItem.menu_text == "사용자 관리") {
+                val intent = Intent(this, ManageUserActivity::class.java)
+                startActivity(intent)
+            } else if (menuItem.menu_text == "기기 관리") {
+                val intent = Intent(this, ManageDeviceActivity::class.java)
+                startActivity(intent)
             }
         }
 

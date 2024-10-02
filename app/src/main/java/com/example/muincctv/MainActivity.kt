@@ -120,6 +120,9 @@ class MainActivity : AppCompatActivity() {
             } else if (menuItem.menu_text == "기기 관리") {
                 val intent = Intent(this, ManageDeviceActivity::class.java)
                 startActivity(intent)
+            } else if (menuItem.menu_text == "사용자 추가") {
+                val intent = Intent(this, AddUserActivity::class.java)
+                startActivity(intent)
             }
         }
 

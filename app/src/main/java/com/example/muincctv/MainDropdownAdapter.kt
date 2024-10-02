@@ -4,54 +4,42 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
 import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
 
-class MainDropdownAdapter(private val context: Context, private val dropdownList: ArrayList<MainDropDownModel>
-) : BaseAdapter() {
-    override fun getCount(): Int {
+class MainDropdownAdapter(
+    private val context: Context,
+    private val dropdownList: ArrayList<MainDropDownModel>
+) : RecyclerView.Adapter<MainDropdownAdapter.ViewHolder>() {
+
+    private var onItemClickListener: ((MainDropDownModel) -> Unit)? = null
+
+    // ViewHolder 클래스
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val itemName: TextView = itemView.findViewById(R.id.dropdown_item_text)
+        val itemImg: TextView = itemView.findViewById(R.id.dropdown_item_img)
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val view = LayoutInflater.from(context).inflate(R.layout.item_dropdown, parent, false)
+        return ViewHolder(view)
+    }
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val item = dropdownList[position]
+        holder.itemName.text = item.device_title
+        holder.itemImg.text = item.device_choice
+
+        holder.itemView.setOnClickListener {
+            onItemClickListener?.invoke(item)
+        }
+    }
+
+    override fun getItemCount(): Int {
         return dropdownList.size
     }
 
-    override fun getItem(p0: Int): Any {
-        return dropdownList[p0]
+    fun setOnItemClickListener(listener: (MainDropDownModel) -> Unit) {
+        onItemClickListener = listener
     }
-
-    override fun getItemId(p0: Int): Long {
-        return 0
-    }
-
-    // 선택화면
-    override fun getView(p0: Int, p1: View?, p2: ViewGroup?): View {
-
-        val rootView: View = LayoutInflater.from(context).inflate(R.layout.item_dropdown, p2, false)
-
-        val itemName: TextView = rootView.findViewById(R.id.dropdown_item_text)
-        val itemImg: TextView = rootView.findViewById(R.id.dropdown_item_img)
-
-        itemName.text = dropdownList[p0].device_title
-        itemImg.text = (dropdownList[p0].device_choice)
-
-        // 선택시 아이콘 숨기기
-        itemImg.visibility = View.GONE
-
-        return rootView
-    }
-
-    // 드롭다운 항목
-    override fun getDropDownView(position: Int, convertView: View?, parent: ViewGroup?): View {
-        val rootView: View = LayoutInflater.from(context).inflate(R.layout.item_dropdown, parent, false)
-
-        val itemName: TextView = rootView.findViewById(R.id.dropdown_item_text)
-        val itemImg: TextView = rootView.findViewById(R.id.dropdown_item_img)
-
-        itemName.text = dropdownList[position].device_title
-        itemImg.text = (dropdownList[position].device_choice)
-
-        // 드롭다운에서는 보이기
-        itemImg.visibility = View.VISIBLE
-
-        return rootView
-    }
-
 }

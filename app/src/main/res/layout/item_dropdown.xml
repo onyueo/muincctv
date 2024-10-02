@@ -28,7 +28,7 @@
             android:textColor="@color/main_bottom"
             android:fontFamily="@font/nanum_bold"
             android:textSize="14sp"
-            android:text="관리자" />
+            android:text="test" />
 
     </LinearLayout>
 

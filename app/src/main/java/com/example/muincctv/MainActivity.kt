@@ -1,5 +1,6 @@
 package com.example.muincctv
 
+import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Spinner
@@ -9,21 +10,28 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.muincctv.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var mainDropdownDevice: TextView
     private lateinit var mainDropdownGroup: TextView
 
-    private lateinit var recyclerView: RecyclerView
+    private lateinit var btnRecyclerView: RecyclerView
     private lateinit var menuAdapter: MainMenuChoiceAdapter
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
+
+        val binding: ActivityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -48,12 +56,21 @@ class MainActivity : AppCompatActivity() {
             MainDropDownModel("Group D", " ")
         )
 
-        // 어댑터 생성 및 스피너에 설정
-        val deviceAdapter = MainDropdownAdapter(this, devices)
-//        mainDropdownDevice.adapter = deviceAdapter
+        // Device TextView 클릭 시 다이얼로그 표시
+        mainDropdownDevice.setOnClickListener {
+            showDialog("Devices", devices) { selectedItem ->
+                mainDropdownDevice.text = selectedItem.device_title
+            }
+        }
 
-        val groupAdapter = MainDropdownAdapter(this, groups)
-//        mainDropdownGroup.adapter = groupAdapter
+        // Group TextView 클릭 시 다이얼로그 표시
+        mainDropdownGroup.setOnClickListener {
+            showDialog("Groups", groups) { selectedItem ->
+                mainDropdownGroup.text = selectedItem.device_title
+            }
+        }
+
+
 
         // Device TextView 클릭 시 다이얼로그 표시
         mainDropdownDevice.setOnClickListener {
@@ -74,8 +91,8 @@ class MainActivity : AppCompatActivity() {
 
 
         // 리사이클러뷰 설정 - 메인메뉴 리스트
-        recyclerView = findViewById<RecyclerView>(R.id.main_menu_choice)
-        recyclerView.layoutManager = GridLayoutManager(this, 2)
+        btnRecyclerView = findViewById<RecyclerView>(R.id.main_menu_choice)
+        btnRecyclerView.layoutManager = GridLayoutManager(this, 2)
 
         val userHasPermission = true // 권한 여부
 
@@ -115,9 +132,28 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        recyclerView.adapter = menuAdapter
+        btnRecyclerView.adapter = menuAdapter
+
+    }
 
 
+    private fun showDialog(title: String, dataList: ArrayList<MainDropDownModel>, onItemSelected: (MainDropDownModel) -> Unit) {
+        val dialog = Dialog(this)
+        dialog.setContentView(R.layout.item_dropdown_list)
+        dialog.setTitle(title)
+
+        val recyclerView: RecyclerView = dialog.findViewById(R.id.dialog_RV)
+        val adapter = MainDropdownAdapter(this, dataList)
+
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter = adapter
+
+        adapter.setOnItemClickListener { item ->
+            onItemSelected(item)
+            dialog.dismiss() // 대화상자 닫기
+        }
+
+        dialog.show()
     }
 }
 

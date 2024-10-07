@@ -9,7 +9,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.muincctv.databinding.ActivityAddUserBinding
-import com.example.muincctv.databinding.ActivityManageUserBinding
 
 class AddUserActivity : AppCompatActivity() {
 
@@ -48,7 +47,6 @@ class AddUserActivity : AppCompatActivity() {
         val userAdapter = AddUserAdapter(items)
         recyclerView.adapter = userAdapter
         recyclerView.layoutManager = LinearLayoutManager(this)
-
 
     }
 }

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="titleText"
+            type="java.lang.String" />
+        <variable
+            name="recordingList"
+            type="java.util.List" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".RecordingListActivity">
+
+        <include
+            android:id="@+id/main_setting_toolbar"
+            layout="@layout/common_toolbar_text"
+            app:titleText="@{titleText}" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="62dp"
+            android:layout_marginHorizontal="30dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/setting_edit_profile"
+                android:background="@drawable/input_round_white_border"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nanum_bold"
+                android:padding="20dp"
+                android:layout_marginTop="20dp"
+                android:text="내 정보 수정"
+                android:textColor="@color/main_black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/setting_edit_ad"
+                android:background="@drawable/input_round_white_border"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/nanum_bold"
+                android:padding="20dp"
+                android:text="광고성 정보 수신 설정"
+                android:textColor="@color/main_black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/setting_edit_password"
+                android:background="@drawable/input_round_white_border"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nanum_bold"
+                android:padding="20dp"
+                android:layout_marginTop="15dp"
+                android:text="비밀번호 변경"
+                android:textColor="@color/main_black"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_margin="30dp"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/setting_edit_logout_BTN"
+                android:background="@drawable/btn_round_black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="로그아웃"
+                android:fontFamily="@font/nanum_bold"
+                android:textColor="@color/main_white"
+                android:textSize="24sp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/setting_edit_delete_account_BTN"
+                android:background="@drawable/btn_round_black"
+                android:backgroundTint="@color/main_red"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="20dp"
+                android:text="탈퇴하기"
+                android:fontFamily="@font/nanum_bold"
+                android:textColor="@color/main_white"
+                android:textSize="24sp"/>
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
+

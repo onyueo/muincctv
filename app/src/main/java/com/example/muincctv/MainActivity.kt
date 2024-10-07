@@ -123,6 +123,9 @@ class MainActivity : AppCompatActivity() {
             } else if (menuItem.menu_text == "사용자 추가") {
                 val intent = Intent(this, AddUserActivity::class.java)
                 startActivity(intent)
+            } else if (menuItem.menu_text == "설정") {
+                val intent = Intent(this, MainSettingActivity::class.java)
+                startActivity(intent)
             }
         }
 

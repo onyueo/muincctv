@@ -51,5 +51,12 @@ class SettingMyInfoActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        // 버튼 클리 시 탈퇴하기 화면으로 이동
+        val goWithdrawalBtn = findViewById<AppCompatButton>(R.id.setting_edit_delete_account_BTN)
+        goWithdrawalBtn.setOnClickListener {
+            val intent = Intent(this, SettingWithdrawalActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 }

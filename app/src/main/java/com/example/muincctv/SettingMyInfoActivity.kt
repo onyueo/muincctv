@@ -13,7 +13,7 @@ import com.example.muincctv.databinding.ActivitySettingMyInfoBinding
 
 class SettingMyInfoActivity : AppCompatActivity() {
 
-    lateinit var binding:ActivitySettingMyInfoBinding
+    lateinit var binding: ActivitySettingMyInfoBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

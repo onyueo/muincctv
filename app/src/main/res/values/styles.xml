@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="category_toggle">
+        <item name="thumbTint">@color/main_white</item>
+        <item name="track">@drawable/toggle_btn_background</item>
+        <item name="android:thumb">@drawable/toggle_btn_circle</item>
+        <item name="android:enabled">true</item>
+    </style>
+
+</resources>

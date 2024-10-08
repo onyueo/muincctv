@@ -43,8 +43,8 @@ class SettingEditProfileActivity : AppCompatActivity() {
 
         if (editBtn == "수정하기") {
             // 비밀번호 입력창 표시
-            binding.settingEditPasswordInput.visibility = View.VISIBLE
-            binding.settingEditPassword.visibility = View.VISIBLE
+            binding.settingEditProfilePassword.visibility = View.VISIBLE
+            binding.settingEditProfilePasswordInput.visibility = View.VISIBLE
             binding.settingEditProfileEditBTN.text = "저장하기"
         } else if (editBtn == "저장하기") {
             // 저장되었습니다 알람?

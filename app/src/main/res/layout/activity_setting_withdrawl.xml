@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="titleText"
+            type="java.lang.String" />
+        <variable
+            name="recordingList"
+            type="java.util.List" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".RecordingListActivity">
+
+        <include
+            android:id="@+id/main_setting_toolbar"
+            layout="@layout/common_toolbar_text"
+            app:titleText="@{titleText}" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="62dp"
+            android:layout_marginHorizontal="30dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/nanum_bold"
+                android:text="관리자 탈퇴 안내"
+                android:textColor="@color/main_white"
+                android:textSize="20sp" />
+
+            <LinearLayout
+                android:background="@drawable/input_round_white_border"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="25dp"
+                android:paddingHorizontal="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nanum_reguler"
+                    android:text="관리자 탈퇴 시의 아래 사항을 숙지해주세요."
+                    android:paddingVertical="5dp"
+                    android:lineSpacingExtra="4dp"
+                    android:textColor="@color/main_black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nanum_reguler"
+                    android:text="* 탈퇴 후 관리자 정보는 삭제되며, 등록한 기기도 모두 삭제됩니다."
+                    android:paddingVertical="6dp"
+                    android:lineSpacingExtra="4dp"
+                    android:textColor="@color/main_black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nanum_reguler"
+                    android:text="* 초대된 사용자도 등록된 기기를 사용하지 못하지만, 초대된 사용자의 정보는 남습니다."
+                    android:paddingVertical="5dp"
+                    android:lineSpacingExtra="4dp"
+                    android:textColor="@color/main_black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nanum_reguler"
+                    android:text="* 회원탈퇴 처리 후에는 회원님의 개인정보를 복원할 수 없으며, 회원탈퇴 진행 시 해당 아이디는 삭제되어 로그인이 불가합니다."
+                    android:paddingVertical="5dp"
+                    android:lineSpacingExtra="4dp"
+                    android:textColor="@color/main_black"
+                    android:textSize="16sp" />
+
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_margin="30dp"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/setting_edit_delete_account_BTN"
+                android:background="@drawable/btn_round_black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="20dp"
+                android:text="회원 탈퇴"
+                android:fontFamily="@font/nanum_bold"
+                android:textColor="@color/main_white"
+                android:textSize="24sp"/>
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
+

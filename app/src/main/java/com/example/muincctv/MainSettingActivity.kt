@@ -35,12 +35,11 @@ class MainSettingActivity : AppCompatActivity() {
             MainSettingModel("내 정보", SettingMyInfoActivity::class.java),
             MainSettingModel("그룹 관리", SettingManageGroupActivity::class.java),
             MainSettingModel("관리자 변경", SettingChangeAdminActivity::class.java),
-
+            MainSettingModel("이동 보조기기 관리", SettingManageDevideActivity::class.java),
             MainSettingModel("비상연락처 관리", SettingEmergencyCallActivity::class.java),
+            MainSettingModel("MU:N 약관 보기", SettingUserAgreementActivity::class.java),
 
             // ~연결 전~
-            MainSettingModel("이동 보조기기 관리", SettingMyInfoActivity::class.java),
-            MainSettingModel("MU:N 약관 보기", SettingMyInfoActivity::class.java),
             MainSettingModel("고객센터 연결", SettingMyInfoActivity::class.java)
         )
 

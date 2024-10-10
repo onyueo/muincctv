@@ -35,25 +35,14 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/Setting_manage_device_using"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="10dp"
-                android:layout_gravity="start"
-                android:text="사용중인 이동 보조기기"
-                android:fontFamily="@font/nanum_bold"
-                android:textColor="@color/main_white"
-                android:textSize="20sp" />
-
-            <TextView
                 android:id="@+id/main_setting_user_service_agreement"
                 android:background="@drawable/input_round_white_border"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/nanum_bold"
                 android:padding="20dp"
-                android:text="지팡이"
+                android:layout_marginTop="20dp"
+                android:text="서비스 이용약관 (필수)"
                 android:textColor="@color/main_black"
                 android:textSize="20sp" />
 
@@ -64,27 +53,19 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/nanum_bold"
                 android:padding="20dp"
-                android:text="목발"
+                android:text="개인정보 수집 및 이용동의 (필수)"
                 android:textColor="@color/main_black"
                 android:textSize="20sp" />
 
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_marginTop="20dp"
-                android:background="#80FFFFFF"/>
-
             <TextView
-                android:id="@+id/Setting_manage_device_not_using"
+                android:id="@+id/main_setting_user_location_agreement"
+                android:background="@drawable/input_round_white_border"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="10dp"
-                android:layout_gravity="start"
-                android:text="사용하지 않는 이동 보조기기"
                 android:fontFamily="@font/nanum_bold"
-                android:textColor="@color/main_white"
+                android:padding="20dp"
+                android:text="위치정보 수집 및 활용 동의 (필수)"
+                android:textColor="@color/main_black"
                 android:textSize="20sp" />
 
             <TextView
@@ -94,31 +75,9 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/nanum_bold"
                 android:padding="20dp"
-                android:text="휠체어"
+                android:text="마케팅 수신 동의 (선택)"
                 android:textColor="@color/main_black"
                 android:textSize="20sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/Setting_emergency_call_bottom"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/manage_device_BTN"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_margin="30dp"
-                android:background="@drawable/btn_round_black"
-                android:fontFamily="@font/nanum_bold"
-                android:text="수정하기"
-                android:textColor="@color/main_white"
-                android:textSize="24sp" />
 
         </LinearLayout>
 

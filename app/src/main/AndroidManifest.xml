@@ -13,6 +13,12 @@
         android:theme="@style/Theme.MuinCCTV"
         tools:targetApi="31">
         <activity
+            android:name=".SettingManageDeviceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SettingUserAgreementActivity"
+            android:exported="false" />
+        <activity
             android:name=".SettingEmergencyCallActivity"
             android:exported="false" />
         <activity

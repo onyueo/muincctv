@@ -32,25 +32,36 @@
                     android:fontFamily="@font/nanum_bold"
                     android:textSize="20sp"
                     android:textColor="@color/main_black"
-                    android:layout_marginBottom="5dp"
                     android:text="이름"/>
 
                 <TextView
                     android:id="@+id/information_title2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginVertical="5dp"
                     android:textAlignment="textEnd"
                     android:fontFamily="@font/nanum_bold"
                     android:textSize="20sp"
                     android:textColor="@color/main_black"
                     android:text="기기코드"/>
+
+                <TextView
+                    android:id="@+id/information_title3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textEnd"
+                    android:fontFamily="@font/nanum_bold"
+                    android:textSize="20sp"
+                    android:textColor="@color/main_black"
+                    android:text="기기코드"
+                    android:visibility="gone"/>
+
             </LinearLayout>
 
             <View
                 android:layout_width="1dp"
-                android:layout_height="60dp"
+                android:layout_height="match_parent"
                 android:layout_marginHorizontal="10dp"
-                android:layout_marginVertical="5dp"
                 android:background="@color/main_black" />
 
 
@@ -68,7 +79,6 @@
                     android:textAlignment="textStart"
                     android:fontFamily="@font/nanum_bold"
                     android:textSize="20sp"
-                    android:layout_marginBottom="5dp"
                     android:textColor="@color/main_black"
                     android:text="김동생"/>
 
@@ -76,11 +86,23 @@
                     android:id="@+id/information_text2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginVertical="5dp"
                     android:textAlignment="textStart"
                     android:fontFamily="@font/nanum_bold"
                     android:textSize="20sp"
                     android:textColor="@color/main_black"
-                    android:text="010-2340-8592"/>
+                    android:text="010-1234-5678"/>
+
+                <TextView
+                    android:id="@+id/information_text3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textStart"
+                    android:fontFamily="@font/nanum_bold"
+                    android:textSize="20sp"
+                    android:textColor="@color/main_black"
+                    android:text="010-1234-5678"
+                    android:visibility="gone"/>
 
             </LinearLayout>
 
@@ -91,6 +113,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatButton
@@ -116,6 +139,7 @@
                 android:textColor="@color/main_white"
                 android:fontFamily="@font/nanum_bold"
                 android:textSize="20sp"
+                android:visibility="visible"
                 android:text="이름변경"/>
 
         </LinearLayout>

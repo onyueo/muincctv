@@ -12,3 +12,8 @@ data class SettingsGroupManageModel(
     val groupAdmin: String,
     val groupDate: String,  // 타입 변경 필요?
 )
+
+data class SettingManageDeviceModel(
+    val deviceName: String,
+    val isUsing: Boolean,
+)

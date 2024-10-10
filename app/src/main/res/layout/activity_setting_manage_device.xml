@@ -46,27 +46,11 @@
                 android:textColor="@color/main_white"
                 android:textSize="20sp" />
 
-            <TextView
-                android:id="@+id/main_setting_user_service_agreement"
-                android:background="@drawable/input_round_white_border"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/Setting_manage_device_using_RV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/nanum_bold"
-                android:padding="20dp"
-                android:text="지팡이"
-                android:textColor="@color/main_black"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/main_setting_user_privacy_agreement"
-                android:background="@drawable/input_round_white_border"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/nanum_bold"
-                android:padding="20dp"
-                android:text="목발"
-                android:textColor="@color/main_black"
-                android:textSize="20sp" />
+                android:layout_gravity="center"/>
 
 
             <LinearLayout
@@ -87,16 +71,12 @@
                 android:textColor="@color/main_white"
                 android:textSize="20sp" />
 
-            <TextView
-                android:id="@+id/main_setting_user_marketing_agreement"
-                android:background="@drawable/input_round_white_border"
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/Setting_manage_device_not_using_RV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/nanum_bold"
-                android:padding="20dp"
-                android:text="휠체어"
-                android:textColor="@color/main_black"
-                android:textSize="20sp" />
+                android:layout_gravity="center"/>
 
         </LinearLayout>
 

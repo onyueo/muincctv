@@ -22,7 +22,7 @@
             android:name=".SettingEmergencyCallActivity"
             android:exported="false" />
         <activity
-            android:name=".SettingManageDevideActivity"
+            android:name=".SettingManageDeviceActivity"
             android:exported="false" />
         <activity
             android:name=".SettingChangeAdminActivity"

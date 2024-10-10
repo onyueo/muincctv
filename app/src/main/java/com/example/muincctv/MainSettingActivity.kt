@@ -33,10 +33,10 @@ class MainSettingActivity : AppCompatActivity() {
     // 리사이클러뷰 설정
         val settings = listOf(
             MainSettingModel("내 정보", SettingMyInfoActivity::class.java),
+            MainSettingModel("그룹 관리", SettingManageGroupActivity::class.java),
+            MainSettingModel("관리자 변경", SettingChangeAdminActivity::class.java),
 
             // ~연결 전~
-            MainSettingModel("그룹 관리", SettingMyInfoActivity::class.java),
-            MainSettingModel("관리자 변경", SettingMyInfoActivity::class.java),
             MainSettingModel("이동 보조기기 관리", SettingMyInfoActivity::class.java),
             MainSettingModel("비상연락처 관리", SettingMyInfoActivity::class.java),
             MainSettingModel("MU:N 약관 보기", SettingMyInfoActivity::class.java),

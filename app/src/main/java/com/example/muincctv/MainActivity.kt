@@ -1,8 +1,11 @@
 package com.example.muincctv
 
+import android.app.AlertDialog
 import android.app.Dialog
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -49,30 +52,43 @@ class MainActivity : AppCompatActivity() {
 
         val groups = arrayListOf(
             MainDropDownModel("Group A", " "),
-            MainDropDownModel("Group B", "관리자"),
+            MainDropDownModel("Group B", "admin"),
             MainDropDownModel("Group C", " "),
             MainDropDownModel("Group D", " ")
         )
 
-        // Device TextView 클릭 시 다이얼로그 표시
+// 모달 테스트1
+        val dataList = arrayOf(
+            "항목1", "항목2", "항목3", "항목4", "항목5", "항목6",
+        )
+
         mainDropdownDevice.setOnClickListener {
-            val customDialog = CustomDialog(this, devices) { selectedItem ->
-                mainDropdownDevice.text = selectedItem.device_title // 선택된 텍스트 설정
+
+            val adapter = ArrayAdapter<String>(
+                this@MainActivity, android.R.layout.simple_spinner_item, dataList
+            )
+
+            val builder = AlertDialog.Builder(this@MainActivity)
+            builder.setTitle("그룹 선택")
+
+            builder.setAdapter(adapter){ dialogInterface: DialogInterface, i: Int ->
+                mainDropdownDevice.text = dataList[i]
             }
-            customDialog.show()
+            builder.setNegativeButton("취소",null)
+            builder.show()
         }
 
-        // Group TextView 클릭 시 다이얼로그 표시
+// 모달 테스트 22
         mainDropdownGroup.setOnClickListener {
-            val customDialog = CustomDialog(this, groups) { selectedItem ->
+            CustomDialog(this, groups) { selectedItem ->
                 mainDropdownGroup.text = selectedItem.device_title // 선택된 텍스트 설정
-            }
-            customDialog.show()
+            }.show()
         }
 
 
 
-        // 리사이클러뷰 설정 - 메인메뉴 리스트
+
+    // 리사이클러뷰 설정 - 메인메뉴 리스트
         btnRecyclerView = findViewById<RecyclerView>(R.id.main_menu_choice)
         btnRecyclerView.layoutManager = GridLayoutManager(this, 2)
 
@@ -134,23 +150,5 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    private fun showDialog(title: String, dataList: ArrayList<MainDropDownModel>, onItemSelected: (MainDropDownModel) -> Unit) {
-        val dialog = Dialog(this)
-        dialog.setContentView(R.layout.item_dropdown_list)
-        dialog.setTitle(title)
-
-        val recyclerView: RecyclerView = dialog.findViewById(R.id.dialog_RV)
-        val adapter = MainDropdownAdapter(this, dataList)
-
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = adapter
-
-        adapter.setOnItemClickListener { item ->
-            onItemSelected(item)
-            dialog.dismiss() // 대화상자 닫기
-        }
-
-        dialog.show()
-    }
 }
 

@@ -20,6 +20,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
+            android:id="@+id/double_alam_modal_img"
             android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -27,6 +28,7 @@
             android:src="@drawable/modal_warning_icon"/>
 
         <TextView
+            android:id="@+id/double_alam_modal_title"
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -38,6 +40,7 @@
             android:fontFamily="@font/nanum_bold" />
 
         <TextView
+            android:id="@+id/double_alam_modal_msg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="40dp"
@@ -61,6 +64,7 @@
         android:orientation="horizontal">
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/double_alam_modal_BTN_left"
             android:layout_width="match_parent"
             android:layout_height="36dp"
             android:layout_weight="1"
@@ -73,6 +77,7 @@
             android:textSize="18sp" />
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/double_alam_modal_BTN_right"
             android:layout_width="match_parent"
             android:layout_height="36dp"
             android:layout_weight="1"

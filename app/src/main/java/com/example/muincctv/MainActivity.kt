@@ -52,36 +52,20 @@ class MainActivity : AppCompatActivity() {
 
         val groups = arrayListOf(
             MainDropDownModel("Group A", " "),
-            MainDropDownModel("Group B", "admin"),
+            MainDropDownModel("Group B", "관리자"),
             MainDropDownModel("Group C", " "),
             MainDropDownModel("Group D", " ")
         )
 
-// 모달 테스트1
-        val dataList = arrayOf(
-            "항목1", "항목2", "항목3", "항목4", "항목5", "항목6",
-        )
-
         mainDropdownDevice.setOnClickListener {
-
-            val adapter = ArrayAdapter<String>(
-                this@MainActivity, android.R.layout.simple_spinner_item, dataList
-            )
-
-            val builder = AlertDialog.Builder(this@MainActivity)
-            builder.setTitle("그룹 선택")
-
-            builder.setAdapter(adapter){ dialogInterface: DialogInterface, i: Int ->
-                mainDropdownDevice.text = dataList[i]
-            }
-            builder.setNegativeButton("취소",null)
-            builder.show()
+            CustomDialog(this, devices) { selectedItem ->
+                mainDropdownDevice.text = selectedItem.device_title
+            }.show()
         }
 
-// 모달 테스트 22
         mainDropdownGroup.setOnClickListener {
             CustomDialog(this, groups) { selectedItem ->
-                mainDropdownGroup.text = selectedItem.device_title // 선택된 텍스트 설정
+                mainDropdownGroup.text = selectedItem.device_title
             }.show()
         }
 

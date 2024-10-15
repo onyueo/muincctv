@@ -26,15 +26,14 @@ class MainDropdownAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(context).inflate(R.layout.item_dropdown, parent, false)
-        return ViewHolder(view)
+        val v = LayoutInflater.from(context).inflate(R.layout.item_dropdown, parent, false)
+        return ViewHolder(v)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val currentItem = dropdownList[position]
         holder.bindItems(currentItem)
 
-        Log.d("MainDropdownAdapter", "Binding item at position $position: ${currentItem.device_title}, Choice: ${currentItem.device_choice}")
 
         holder.itemView.setOnClickListener {
             onItemClickListener?.invoke(currentItem)

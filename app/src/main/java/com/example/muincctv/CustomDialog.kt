@@ -6,6 +6,9 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.WindowManager
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -23,6 +26,19 @@ class CustomDialog(
         // 레이아웃 설정
         val view = LayoutInflater.from(context).inflate(R.layout.item_dropdown_list, null)
         setContentView(view)
+
+        // title 변경
+        var dialogTitle = view.findViewById<TextView>(R.id.dialog_title)
+        dialogTitle.text = "기기 선택"
+
+        var closeButton = view.findViewById<ImageView>(R.id.dialog_close_icon)
+        closeButton.setOnClickListener {
+            dismiss()
+        }
+
+        for (item in dataList) {
+            Log.d("CustomDialog", "item: device_title: ${item.device_title}, device_choice: ${item.device_choice}")
+        }
 
         // RecyclerView 설정
         recyclerView = view.findViewById(R.id.dialog_RV)
@@ -45,6 +61,7 @@ class CustomDialog(
         params?.width = context.resources.displayMetrics.widthPixels - 30.dpToPx(context)
         params?.height = WindowManager.LayoutParams.WRAP_CONTENT
         window?.attributes = params
+
     }
 
     fun Int.dpToPx(context: Context): Int {

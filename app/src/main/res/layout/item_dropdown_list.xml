@@ -25,6 +25,7 @@
             android:text="Title"/>
 
         <ImageView
+            android:id="@+id/dialog_close_icon"
             android:layout_width="wrap_content"
             android:layout_height="15dp"
             android:src="@drawable/assist_device_x_black" />

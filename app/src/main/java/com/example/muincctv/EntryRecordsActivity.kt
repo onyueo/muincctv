@@ -3,6 +3,7 @@ package com.example.muincctv
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatImageView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.databinding.DataBindingUtil
@@ -29,6 +30,12 @@ class EntryRecordsActivity : AppCompatActivity() {
 
         // appbar 타이틀 변경
         binding.titleText = "출입 기록"
+
+        // 툴바 뒤로가기
+        var  toolBack = findViewById<AppCompatImageView>(R.id.tool_back)
+        toolBack.setOnClickListener {
+            onBackPressed()
+        }
 
 
     // 리사이클러뷰 설정 - 출입기록

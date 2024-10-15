@@ -6,6 +6,7 @@ import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
+import androidx.appcompat.widget.AppCompatImageView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.databinding.DataBindingUtil
@@ -29,6 +30,12 @@ class SettingMyInfoActivity : AppCompatActivity() {
 
         // appbar 타이틀 변경
         binding.titleText = "설정"
+
+        // 툴바 뒤로가기
+        var  toolBack = findViewById<AppCompatImageView>(R.id.tool_back)
+        toolBack.setOnClickListener {
+            onBackPressed()
+        }
 
         // 버튼 클리 시 내 정보 수정 화면으로 이동
         val goEditProfileBtn = findViewById<TextView>(R.id.setting_edit_profile)

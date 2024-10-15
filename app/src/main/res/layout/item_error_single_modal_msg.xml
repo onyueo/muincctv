@@ -19,13 +19,16 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
+            android:id="@+id/single_alam_modal_img"
             android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="10dp"
+            android:visibility="visible"
             android:src="@drawable/modal_warning_icon"/>
 
         <TextView
+            android:id="@+id/single_alam_modal_title"
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -33,9 +36,11 @@
             android:text="Error"
             android:textColor="@color/main_red"
             android:textSize="24sp"
+            android:visibility="visible"
             android:fontFamily="@font/nanum_bold" />
 
         <TextView
+            android:id="@+id/single_alam_modal_msg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="40dp"
@@ -44,6 +49,7 @@
             android:text="에러 메시지"
             android:textColor="@color/main_black"
             android:textSize="20sp"
+            android:visibility="visible"
             android:fontFamily="@font/nanum_reguler" />
 
     </LinearLayout>
@@ -59,6 +65,7 @@
         android:orientation="vertical">
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/single_alam_modal_BTN"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@drawable/btn_round_black"

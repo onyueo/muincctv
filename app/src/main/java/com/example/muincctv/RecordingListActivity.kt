@@ -2,8 +2,10 @@ package com.example.muincctv
 
 import android.os.Bundle
 import android.widget.Spinner
+import android.widget.Toolbar
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatImageView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.databinding.DataBindingUtil
@@ -35,7 +37,13 @@ class RecordingListActivity : AppCompatActivity() {
         // appbar 타이틀 변경
         binding.titleText = "녹화 영상"
 
-    // 드롭다운 설정
+        // 툴바 뒤로가기
+        var  toolBack = findViewById<AppCompatImageView>(R.id.tool_back)
+        toolBack.setOnClickListener {
+            onBackPressed()
+        }
+
+        // 드롭다운 설정
         recordingDropdownDevice = findViewById(R.id.recording_dropdown_device)
         recordingDropdownGroup = findViewById(R.id.recording_dropdown_group)
 

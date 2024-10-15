@@ -3,6 +3,7 @@ package com.example.muincctv
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatImageView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.databinding.DataBindingUtil
@@ -33,6 +34,12 @@ class SettingEditAdActivity : AppCompatActivity() {
 
         // appbar 타이틀 변경
         binding.titleText = "광고성 정보 수신 설정"
+
+        // 툴바 뒤로가기
+        var  toolBack = findViewById<AppCompatImageView>(R.id.tool_back)
+        toolBack.setOnClickListener {
+            onBackPressed()
+        }
 
     // 토글 이벤트
         // 스위치 초기 상태 설정

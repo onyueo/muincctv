@@ -25,6 +25,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="10dp"
+            android:visibility="visible"
             android:src="@drawable/modal_warning_icon"/>
 
         <TextView
@@ -37,6 +38,7 @@
             android:textColor="@color/main_black"
             android:textAlignment="center"
             android:textSize="20sp"
+            android:visibility="visible"
             android:fontFamily="@font/nanum_bold" />
 
         <TextView
@@ -49,6 +51,7 @@
             android:text="메시지"
             android:textColor="@color/main_gray"
             android:textSize="16sp"
+            android:visibility="visible"
             android:fontFamily="@font/nanum_bold" />
 
     </LinearLayout>
@@ -73,6 +76,7 @@
             android:fontFamily="@font/nanum_bold"
             android:layout_marginHorizontal="5dp"
             android:text="아니오"
+            android:visibility="visible"
             android:textColor="@color/main_white"
             android:textSize="18sp" />
 
@@ -85,6 +89,7 @@
             android:background="@drawable/btn_round_black"
             android:fontFamily="@font/nanum_bold"
             android:text="네"
+            android:visibility="visible"
             android:textColor="@color/main_white"
             android:textSize="18sp" />
 

@@ -1,99 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<layout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/modal_round_white"
-    android:orientation="vertical"
-    android:layout_width="300dp"
-    android:layout_height="225dp"
-    android:paddingHorizontal="5dp"
-    android:paddingVertical="15dp">
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
 
-    <!--  상단  -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@drawable/modal_round_white"
         android:orientation="vertical"
-        android:paddingHorizontal="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/double_alam_modal_img"
-            android:layout_width="40dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="10dp"
-            android:visibility="visible"
-            android:src="@drawable/modal_warning_icon"/>
-
-        <TextView
-            android:id="@+id/double_alam_modal_title"
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="25dp"
-            android:text="메시지"
-            android:textColor="@color/main_black"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            android:visibility="visible"
-            android:fontFamily="@font/nanum_bold" />
-
-        <TextView
-            android:id="@+id/double_alam_modal_msg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="40dp"
-            android:layout_gravity="center"
-            android:textAlignment="center"
-            android:text="메시지"
-            android:textColor="@color/main_gray"
-            android:textSize="16sp"
-            android:visibility="visible"
-            android:fontFamily="@font/nanum_bold" />
-
-    </LinearLayout>
-
-
-    <!--  하단  -->
-    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:orientation="horizontal">
+        android:paddingHorizontal="5dp"
+        android:paddingVertical="15dp">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/double_alam_modal_BTN_left"
+        <!--  상단  -->
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="36dp"
-            android:layout_weight="1"
-            android:background="@drawable/btn_round_black"
-            android:backgroundTint="@color/main_red"
-            android:fontFamily="@font/nanum_bold"
-            android:layout_marginHorizontal="5dp"
-            android:text="아니오"
-            android:visibility="visible"
-            android:textColor="@color/main_white"
-            android:textSize="18sp" />
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/double_alam_modal_BTN_right"
+            <ImageView
+                android:id="@+id/double_alam_modal_img"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:visibility="visible"
+                android:src="@drawable/modal_warning_icon"/>
+
+            <TextView
+                android:id="@+id/double_alam_modal_title"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                android:text="메시지"
+                android:textColor="@color/main_black"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:visibility="visible"
+                android:fontFamily="@font/nanum_bold" />
+
+            <TextView
+                android:id="@+id/double_alam_modal_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="40dp"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:text="메시지"
+                android:textColor="@color/main_gray"
+                android:textSize="16sp"
+                android:visibility="visible"
+                android:fontFamily="@font/nanum_bold" />
+
+        </LinearLayout>
+
+
+        <!--  하단  -->
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="36dp"
-            android:layout_weight="1"
-            android:layout_marginHorizontal="5dp"
-            android:background="@drawable/btn_round_black"
-            android:fontFamily="@font/nanum_bold"
-            android:text="네"
-            android:visibility="visible"
-            android:textColor="@color/main_white"
-            android:textSize="18sp" />
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:orientation="horizontal">
 
-    </LinearLayout>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/double_alam_modal_BTN_left"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_round_black"
+                android:backgroundTint="@color/main_red"
+                android:fontFamily="@font/nanum_bold"
+                android:layout_marginHorizontal="5dp"
+                android:text="아니오"
+                android:visibility="visible"
+                android:textColor="@color/main_white"
+                android:textSize="18sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/double_alam_modal_BTN_right"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="5dp"
+                android:background="@drawable/btn_round_black"
+                android:fontFamily="@font/nanum_bold"
+                android:text="네"
+                android:visibility="visible"
+                android:textColor="@color/main_white"
+                android:textSize="18sp" />
+
+        </LinearLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

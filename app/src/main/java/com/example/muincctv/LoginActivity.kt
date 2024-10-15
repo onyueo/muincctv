@@ -4,13 +4,14 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class LoginActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity(), ConfirmDialogInterface {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -43,6 +44,8 @@ class LoginActivity : AppCompatActivity() {
         }
 
 
+
+
         // 테스트용
         val jumpBtn = findViewById<TextView>(R.id.jump_jump)
         jumpBtn.setOnClickListener {
@@ -50,6 +53,27 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        // 모달 테스트용
+        val kakaoBtn = findViewById<AppCompatButton>(R.id.login_kakao_BTN)
+        kakaoBtn.setOnClickListener {
+            val title = "정말 계정을 삭제하시겠어요?"
+            val content = "지금까지의 정보가 모두 사라집니다."
+
+            val dialog = CustomDoubleAlamDialog(this, title, content, 1) // ConfirmDialogInterface 타입으로 전달
+            dialog.isCancelable = false
+            dialog.show(supportFragmentManager, "CustomDoubleAlamDialog") // 다이얼로그 표시
+        }
+
+
     }
+
+    override fun onClickYesButton(id: Int) {
+        // 사용자 확인 버튼 클릭 시 수행할 작업
+        if (id == 1) {
+            // 계정 삭제 로직 추가
+            Toast.makeText(this, "계정이 삭제되었습니다.", Toast.LENGTH_SHORT).show()
+        }
+    }
+
 }
 

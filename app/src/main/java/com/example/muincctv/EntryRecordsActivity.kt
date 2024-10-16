@@ -1,6 +1,7 @@
 package com.example.muincctv
 
 import android.os.Bundle
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatImageView
@@ -36,6 +37,14 @@ class EntryRecordsActivity : AppCompatActivity() {
         toolBack.setOnClickListener {
             onBackPressed()
         }
+
+
+    // 드롭다운 설정
+        var entryDropdownGroup = findViewById<TextView>(R.id.entry_recording_dropdown_group)
+        var entryDropdownTime = findViewById<TextView>(R.id.entry_recording_dropdown_time)
+
+
+
 
 
     // 리사이클러뷰 설정 - 출입기록

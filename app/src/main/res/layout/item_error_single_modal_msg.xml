@@ -44,7 +44,7 @@
                 android:id="@+id/single_alam_modal_msg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="40dp"
+                android:layout_marginBottom="80dp"
                 android:layout_gravity="center"
                 android:textAlignment="center"
                 android:text="에러 메시지"

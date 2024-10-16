@@ -65,6 +65,16 @@ class LoginActivity : AppCompatActivity(), ConfirmDialogInterface {
             dialog.show(supportFragmentManager, "CustomDoubleAlamDialog")
         }
 
+        val naverBtn = findViewById<LinearLayout>(R.id.login_naver_BTN)
+        naverBtn.setOnClickListener {
+            val content = "아이디 또는 비밀번호가 맞지 않습니다."
+            val title = "로그인 실패"
+
+            val dialog = CustomSingleAlamDialog(this, 1, content, title)
+            dialog.isCancelable = false
+            dialog.show(supportFragmentManager, "CustomDoubleAlamDialog")
+        }
+
 
     }
 

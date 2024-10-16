@@ -15,7 +15,7 @@ interface ConfirmDialogInterface {
 
 class CustomDoubleAlamDialog(
     private val confirmDialogInterface: ConfirmDialogInterface,
-    title: String, content: String?, id: Int
+    id: Int, title: String, content: String? = null
 ) : DialogFragment() {
 
     // 뷰 바인딩 정의

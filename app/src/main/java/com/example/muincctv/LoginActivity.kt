@@ -60,7 +60,7 @@ class LoginActivity : AppCompatActivity(), ConfirmDialogInterface {
             val title = "정말 계정을 삭제하시겠어요?"
             val content = "지금까지의 정보가 모두 사라집니다."
 
-            val dialog = CustomDoubleAlamDialog(this, title, content, 1)
+            val dialog = CustomDoubleAlamDialog(this, 1, title)
             dialog.isCancelable = false
             dialog.show(supportFragmentManager, "CustomDoubleAlamDialog")
         }

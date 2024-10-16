@@ -217,28 +217,76 @@
             </LinearLayout>
 
             <!--     아이콘.. 사이즈조절해서 넣기       -->
-            <androidx.appcompat.widget.AppCompatButton
+            <LinearLayout
                 android:id="@+id/login_kakao_BTN"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
                 android:background="@drawable/btn_round_black"
                 android:backgroundTint="@color/kakao_yellow"
-                android:textColor="@color/main_black"
-                android:layout_marginBottom="15dp"
-                android:text="카카오톡으로 시작 / 로그인하기"
-                android:fontFamily="@font/nanum_extra_bold"
-                android:textSize="16sp"/>
-
-            <!--     아이콘.. 사이즈조절해서 넣기       -->
-            <androidx.appcompat.widget.AppCompatButton
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:src="@drawable/icon_kakao"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="카카오톡으로 시작 / 로그인하기"
+                    android:textColor="@color/main_black"
+                    android:fontFamily="@font/nanum_extra_bold"
+                    android:textSize="16sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/login_naver_BTN"
                 android:background="@drawable/btn_round_black"
                 android:backgroundTint="@color/naver_green"
-                android:textColor="@color/main_white"
-                android:text="네아버로 시작 / 로그인하기"
-                android:fontFamily="@font/nanum_extra_bold"
-                android:textSize="16sp"/>
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:src="@drawable/icon_naver"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="네이버로 시작 / 로그인하기"
+                    android:textColor="@color/main_white"
+                    android:fontFamily="@font/nanum_extra_bold"
+                    android:textSize="16sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/login_google_BTN"
+                android:background="@drawable/btn_round_black"
+                android:backgroundTint="@color/main_white"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:src="@drawable/icon_google"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="구글로 시작 / 로그인하기"
+                    android:textColor="@color/main_black"
+                    android:fontFamily="@font/nanum_extra_bold"
+                    android:textSize="16sp"/>
+            </LinearLayout>
+
+
 
         </LinearLayout>
 

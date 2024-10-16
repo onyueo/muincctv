@@ -3,6 +3,7 @@ package com.example.muincctv
 import android.content.Intent
 import android.os.Bundle
 import android.widget.EditText
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -54,14 +55,14 @@ class LoginActivity : AppCompatActivity(), ConfirmDialogInterface {
         }
 
         // 모달 테스트용
-        val kakaoBtn = findViewById<AppCompatButton>(R.id.login_kakao_BTN)
+        val kakaoBtn = findViewById<LinearLayout>(R.id.login_kakao_BTN)
         kakaoBtn.setOnClickListener {
             val title = "정말 계정을 삭제하시겠어요?"
             val content = "지금까지의 정보가 모두 사라집니다."
 
-            val dialog = CustomDoubleAlamDialog(this, title, content, 1) // ConfirmDialogInterface 타입으로 전달
+            val dialog = CustomDoubleAlamDialog(this, title, content, 1)
             dialog.isCancelable = false
-            dialog.show(supportFragmentManager, "CustomDoubleAlamDialog") // 다이얼로그 표시
+            dialog.show(supportFragmentManager, "CustomDoubleAlamDialog")
         }
 
 

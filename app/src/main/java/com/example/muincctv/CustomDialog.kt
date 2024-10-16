@@ -36,9 +36,9 @@ class CustomDialog(
             dismiss()
         }
 
-        for (item in dataList) {
-            Log.d("CustomDialog", "item: device_title: ${item.device_title}, device_choice: ${item.device_choice}")
-        }
+//        for (item in dataList) {
+//            Log.d("CustomDialog", "item: device_title: ${item.device_title}, device_choice: ${item.device_choice}")
+//        }
 
         // RecyclerView 설정
         recyclerView = view.findViewById(R.id.dialog_RV)

@@ -66,6 +66,18 @@ class CustomDoubleAlamDialog(
         return view
     }
 
+    override fun onStart() {
+        super.onStart()
+        // 다이얼로그의 크기 설정
+        dialog?.let {
+            val width = (resources.displayMetrics.widthPixels * 0.8).toInt()
+            val height = ViewGroup.LayoutParams.WRAP_CONTENT
+            it.window?.setLayout(width, height)
+        }
+    }
+
+
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

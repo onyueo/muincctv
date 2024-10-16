@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
+    android:background="@color/main_white"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Find_Id_PwActivity">
@@ -32,17 +33,20 @@
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/find_idpw_tab"
+            android:background="@color/main_white"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             tools:layout_editor_absoluteX="1dp"
             tools:layout_editor_absoluteY="113dp">
 
             <com.google.android.material.tabs.TabItem
+                android:id="@+id/find_idpw_id_BTN"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="아이디" />
 
             <com.google.android.material.tabs.TabItem
+                android:id="@+id/find_idpw_pw_BTN"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="비밀번호" />
@@ -55,7 +59,6 @@
         android:id="@+id/find_idpw_fragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/layout_color_ddd5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

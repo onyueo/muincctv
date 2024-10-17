@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
+import androidx.appcompat.widget.AppCompatImageView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.GridLayoutManager
@@ -41,6 +42,11 @@ class AssistDeviceChoiceActivity : AppCompatActivity() {
         recyclerView.layoutManager = GridLayoutManager(this, 2)
 
 
+        // 툴바 뒤로가기
+        var  toolBack = findViewById<AppCompatImageView>(R.id.tool_back)
+        toolBack.setOnClickListener {
+            onBackPressed()
+        }
 
         // 확인버튼 클릭 시 그룹이름 정하는 페이지로 이동
         val goNext = findViewById<AppCompatButton>(R.id.assist_device_choice_btn)

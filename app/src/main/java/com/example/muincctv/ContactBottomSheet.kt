@@ -12,16 +12,11 @@ class ContactBottomSheet: BottomSheetDialogFragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_contact_bottom_sheet, container, false)
+        return inflater.inflate(R.layout.item_emergency_contact_bottomsheet, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // 취소 버튼 클릭 리스너 설정
-        val cancelButton: AppCompatButton = view.findViewById(R.id.main_call_cancel)
-        cancelButton.setOnClickListener {
-            dismiss()
-        }
     }
 }

@@ -28,6 +28,7 @@
         tools:layout_editor_absoluteX="0dp">
 
         <LinearLayout
+            android:id="@+id/admin_choice_owner_BTN"
             android:layout_width="match_parent"
             android:layout_height="210dp"
             android:background="@drawable/input_round_white"
@@ -58,6 +59,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/admin_choice_guest_BTN"
             android:layout_width="match_parent"
             android:layout_height="210dp"
             android:background="@drawable/input_round_white"

@@ -46,15 +46,15 @@ class MainActivity : AppCompatActivity() {
         // 데이터 배열
         val devices = arrayListOf(
             MainDropDownModel("Device 1", "관리자"),
-            MainDropDownModel("Device 2", " "),
-            MainDropDownModel("Device 3", " ")
+            MainDropDownModel("Device 2", ""),
+            MainDropDownModel("Device 3", "")
         )
 
         val groups = arrayListOf(
-            MainDropDownModel("Group A", " "),
+            MainDropDownModel("Group A", ""),
             MainDropDownModel("Group B", "관리자"),
-            MainDropDownModel("Group C", " "),
-            MainDropDownModel("Group D", " ")
+            MainDropDownModel("Group C", ""),
+            MainDropDownModel("Group D", "")
         )
 
         mainDropdownDevice.setOnClickListener {

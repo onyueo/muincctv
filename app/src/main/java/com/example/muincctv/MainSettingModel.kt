@@ -8,3 +8,8 @@ data class MainSettingModel (
 data class EntryRecordsDropdownModel (
     val title: String,
 )
+
+data class EmergencyContactModel(
+    val name: String,
+    val phone: String
+)

@@ -8,4 +8,9 @@
         <item name="android:enabled">true</item>
     </style>
 
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/modal_slide_in_bottom</item>
+        <item name="android:windowExitAnimation">@anim/modal_slide_out_bottom</item>
+    </style>
+
 </resources>

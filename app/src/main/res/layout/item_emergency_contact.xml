@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingVertical="10dp"
+    android:layout_marginVertical="10dp"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/emergency_contact_item">
+
+    <TextView
+        android:id="@+id/emergency_contact_item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="5dp"
+        android:text="큰아들"
+        android:textSize="20sp"
+        android:textColor="@color/main_black"
+        android:fontFamily="@font/nanum_bold" />
+
+    <TextView
+        android:id="@+id/emergency_contact_item_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="5dp"
+        android:text="010-1234-5678"
+        android:textSize="15sp"
+        android:fontFamily="@font/nanum_light"
+        android:textColor="@color/main_gray" />
+
+</LinearLayout>

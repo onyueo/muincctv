@@ -4,11 +4,18 @@ import android.app.AlertDialog
 import android.app.Dialog
 import android.content.DialogInterface
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.view.Gravity
+import android.view.ViewGroup
+import android.view.Window
 import android.widget.ArrayAdapter
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatButton
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.databinding.DataBindingUtil
@@ -23,7 +30,10 @@ class MainActivity : AppCompatActivity() {
     private lateinit var mainDropdownGroup: TextView
 
     private lateinit var btnRecyclerView: RecyclerView
+    private lateinit var bottomSheetRecyclerView: RecyclerView
+
     private lateinit var menuAdapter: MainMenuChoiceAdapter
+    private lateinit var bottomsheetAdapter: EmergencyContactBottomsheetAdapter
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -126,11 +136,51 @@ class MainActivity : AppCompatActivity() {
             } else if (menuItem.menu_text == "설정") {
                 val intent = Intent(this, MainSettingActivity::class.java)
                 startActivity(intent)
+            } else if (menuItem.menu_text == "비상연락") {
+                // 바텀시트 띄우기
+                showModalBottomSheet()
             }
         }
 
         btnRecyclerView.adapter = menuAdapter
 
+    }
+
+    private fun showModalBottomSheet() {
+        val dialog = Dialog(this)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.setContentView(R.layout.item_emergency_contact_bottomsheet)
+
+        // 연락처 목록
+        val emergencyContacts: MutableList<EmergencyContactModel> = mutableListOf (
+            EmergencyContactModel("이름1", "010-1111-1111"),
+            EmergencyContactModel("이름2", "010-2222-2222")
+        )
+
+        // 리사이클러뷰 연결
+        bottomSheetRecyclerView = dialog.findViewById(R.id.emergency_contact_RV)
+        bottomSheetRecyclerView.layoutManager = LinearLayoutManager(this)
+        bottomsheetAdapter = EmergencyContactBottomsheetAdapter(emergencyContacts)
+        bottomSheetRecyclerView.adapter = bottomsheetAdapter
+
+
+        val dismissBtn = dialog.findViewById<AppCompatButton>(R.id.emergency_contact_dismiss_BTN)
+        dismissBtn.setOnClickListener {
+            dialog.dismiss()
+        }
+
+        dialog.window?.setLayout(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT
+        )
+
+        // Modal BottomSheet의 background를 제외한 부분은 투명
+        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        dialog.window?.attributes?.windowAnimations = R.style.DialogAnimation
+        dialog.window?.setGravity(Gravity.BOTTOM)
+
+        // 바텀시트 보여주기~
+        dialog.show()
     }
 
 

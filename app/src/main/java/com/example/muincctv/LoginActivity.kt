@@ -50,7 +50,7 @@ class LoginActivity : AppCompatActivity(), ConfirmDialogInterface {
         // 테스트용
         val jumpBtn = findViewById<TextView>(R.id.jump_jump)
         jumpBtn.setOnClickListener {
-            val intent = Intent(this, AssistDeviceChoiceActivity::class.java)
+            val intent = Intent(this, AdminChoiceActivity::class.java)
             startActivity(intent)
         }
 

@@ -29,7 +29,6 @@
             android:layout_marginTop="64dp"
             android:orientation="vertical"
             app:layout_constraintTop_toBottomOf="@id/recording_toolbar">
-            <!--            android:visibility="@{recordingList.isEmpty() ? android.view.View.VISIBLE : android.view.View.GONE}">-->
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -43,22 +42,40 @@
                     android:orientation="horizontal">
 
 
-                    <!--     드롭다운 데이터 바꿔야함~!~!       -->
-                    <Spinner
-                        android:id="@+id/recording_dropdown_device"
-                        android:background="@drawable/dropdown_background"
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_margin="10dp" />
+                        android:orientation="horizontal">
 
-                    <Spinner
-                        android:id="@+id/recording_dropdown_group"
-                        android:background="@drawable/dropdown_background"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_margin="10dp" />
+                        <TextView
+                            android:id="@+id/recording_dropdown_group"
+                            android:background="@drawable/dropdown_background"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="test1"
+                            android:fontFamily="@font/nanum_bold"
+                            android:textSize="16sp"
+                            android:textColor="@color/main_black"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="5dp"
+                            android:layout_margin="10dp" />
+
+                        <TextView
+                            android:id="@+id/recording_dropdown_time"
+                            android:background="@drawable/dropdown_background"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="test2"
+                            android:fontFamily="@font/nanum_bold"
+                            android:textSize="16sp"
+                            android:textColor="@color/main_black"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="5dp"
+                            android:layout_margin="10dp" />
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
@@ -66,15 +83,15 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginHorizontal="10dp"
-                android:background="@color/layout_color_ddd7"/>
+                android:layout_height="2dp"
+                android:layout_marginBottom="10dp"
+                android:background="#50FFFFFF" />
 
 
             <TextView
                 android:id="@+id/no_recording_text"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:text="녹화 영상이 없습니다"
